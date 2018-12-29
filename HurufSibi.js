@@ -5,7 +5,6 @@ import Header from './Header';
 import Footer from './Footer';
 import demoData from './dataSibi'
 import SectionHeader from './SectionHeader'
-import DisplayModal from './DisplayModal'
 
 
 const styles = StyleSheet.create({
@@ -109,25 +108,12 @@ class ListViewDemo extends React.Component {
   //   };
   // }
 
-  state = {
-    display: false
-  }
-  
-  triggerModal() {
-    this.setState(prevState => {
-      return {
-        display: true
-      }
-    });
-  }
-
   render() {
     return (
       <ListView
         style={styles.container}
         dataSource={this.state.dataSource}
         renderRow={(data) => <Row {...data} />}
-        renderRow={(data)=> <DisplayModal {...data}/>}
         renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
         renderHeader={() => <Header />}
         renderFooter={() => <Footer />}

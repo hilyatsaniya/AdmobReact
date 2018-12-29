@@ -1,7 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableHighlight, Alert } from 'react-native';
-
-import DisplayModal from './DisplayModal'
+import { View, Text, StyleSheet, Image } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -22,10 +20,12 @@ const styles = StyleSheet.create({
 });
 
 const Row = (props) => (
-  <View style={styles.container}>onPress = { () => this.triggerModal() }
-    <Image source={{ uri: props.picture.large}} style={styles.photo} /><Text style={styles.text}>
+  <View style={styles.container}>
+    <Image source={{ uri: props.picture.large}} style={styles.photo} />
+    <Text style={styles.text}>
       {`${props.name}`}
-    </Text></View>
+    </Text>
+  </View>
 );
 
 export default Row;
